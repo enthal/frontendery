@@ -6,53 +6,40 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <script type="text/x-handlebars" data-template-name="todos">
 
-    <section id="todoapp">
-      <header id="header">
-        <h1>todos</h1>
-        <input type="text" id="new-todo" placeholder="What needs to be done?" />
-      </header>
+    <script type="text/x-emblem" data-template-name="todos">
 
-      <section id="main">
-        <ul id="todo-list">
-          {{#each}}
-            <li>
-              <input type="checkbox" class="toggle">
-              <label>{{title}}</label>
-              <button class="destroy"></button>
-            </li>
-          {{/each}}
-        </ul>
+    section#todoapp
 
-        <input type="checkbox" id="toggle-all">
-      </section>
+      header#header
+        h1 todos
+        input#new-todo placeholder="What needs to be done?" type="text"
 
-      <footer id="footer">
-        <span id="todo-count">
-          <strong>2</strong> todos left
-        </span>
-        <ul id="filters">
-          <li>
-            <a href="all" class="selected">All</a>
-          </li>
-          <li>
-            <a href="active">Active</a>
-          </li>
-          <li>
-            <a href="completed">Completed</a>
-          </li>
-        </ul>
+      section#main
+        ul#todo-list
+          each
+            li
+              input.toggle type="checkbox"
+                label = title
+                button.destroy
+        input#toggle-all type="checkbox"
 
-        <button id="clear-completed">
-          Clear completed (1)
-        </button>
-      </footer>
-    </section>
+      footer#footer
+        span#todo-count
+          strong 2
+          | todos left
+        ul#filters
+          li
+            a.selected href="all"
+          li
+            a href="active"
+          li
+            a href="completed"
+        button#clear-completed
+          | Clear completed (1)
 
-    <footer id="info">
-      <p>Double-click to edit a todo</p>
-    </footer>
+    footer#info
+      p Double-click to edit a todo
 
     </script>
 
@@ -61,6 +48,7 @@
     <script src="js/libs/handlebars-1.0.0.js"></script>
     <script src="js/libs/ember.js"></script>
     <script src="js/libs/ember-data.js"></script>
+    <script src="js/libs/emblem.js"></script>
 
     <script src="js/application.js"></script>
     <script src="js/router.js"></script>
