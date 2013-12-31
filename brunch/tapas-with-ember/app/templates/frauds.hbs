@@ -1,5 +1,10 @@
 <h1>frauds Template</h1>
 
 {{#each}}
-<li {{action 'markAsFraud' .}}>{{title}}</li>
+<li>
+  {{#link-to 'fraud' .}}
+    {{title}}
+  {{/link-to}}
+  <button {{action 'markAsFraud' .}}></button>
+</li>
 {{/each}}
