@@ -9,7 +9,6 @@ angular.module('app.controllers', [])
   '$location'
   '$resource'
   '$rootScope'
-
 ($scope, $location, $resource, $rootScope) ->
 
   # Uses the url to determine if the selected
@@ -36,23 +35,19 @@ angular.module('app.controllers', [])
 
 .controller('MyCtrl1', [
   '$scope'
-
 ($scope) ->
   $scope.onePlusOne = 2
 ])
 
 .controller('MyCtrl2', [
   '$scope'
-
 ($scope) ->
   $scope
 ])
 
 .controller('TodoCtrl', [
   '$scope'
-
 ($scope) ->
-
   $scope.todos = [
     text: "learn angular"
     done: true
