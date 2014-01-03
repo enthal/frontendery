@@ -1,7 +1,7 @@
 
 angular.module('app.controllers', [])
 
-.controller('AppCtrl', [
+.controller('Application', [
   '$scope'
   '$location'
   '$resource'
@@ -9,7 +9,7 @@ angular.module('app.controllers', [])
 ($scope, $location, $resource, $rootScope) ->
 ])
 
-.controller('TodoCtrl', [
+.controller('Issues', [
   '$scope'
 ($scope) ->
 ])

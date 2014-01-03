@@ -16,9 +16,9 @@ App.config([
 
 ($routeProvider, $locationProvider, config) ->
 
-  $routeProvider
-    .when('/todo', {templateUrl: '/partials/todo.html'})
-    .otherwise({redirectTo: '/todo'})
-
   $locationProvider.html5Mode(true)  # Without server side support html5 must be disabled.
+
+  $routeProvider
+    .when('/issues', {templateUrl: '/partials/issues.html'})
+    .otherwise({redirectTo: '/issues'})
 ])
