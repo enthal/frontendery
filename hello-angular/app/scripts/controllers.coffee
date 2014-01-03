@@ -36,6 +36,7 @@ do ->
       console.log 'use issuesCache'
       deferred.resolve issuesCache
     else
+      # TODO: what if a request is already outstanding? could chain to its promise....
       console.log 'fetch...'
       $http.get('/api/v1/issues.json')
         .success (issues) ->
