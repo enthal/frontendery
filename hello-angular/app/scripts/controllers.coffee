@@ -12,4 +12,9 @@ angular.module('app.controllers', [])
 .controller('Issues', [
   '$scope'
 ($scope) ->
+  $scope.issues = [
+    title: 'your mom'
+  ,
+    title: 'your dad'
+  ]
 ])
