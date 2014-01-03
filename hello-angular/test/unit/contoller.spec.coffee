@@ -6,15 +6,3 @@
 describe "controllers", ->
 
   beforeEach(module "app.controllers")
-
-  describe "MyCtrl1", ->
-
-    it "should make scope testable", inject ($rootScope, $controller) ->
-      scope = $rootScope.$new()
-      ctrl = $controller "MyCtrl1",
-        $scope: scope,
-      expect(scope.onePlusOne).toEqual(2)
-
-  describe "MyCtrl2", ->
-
-    it "should..."
