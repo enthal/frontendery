@@ -1,7 +1,7 @@
-div
+div(ng-controller='Issues')
   h2 Issues
-  div(ng-controller='Issues')
+  div
     ul
       li.issue(ng-repeat='issue in issues')
-        {{issue.title}}
+        a(ng-href='/issues/{{issue.id}}') {{issue.title}}
         button(ng-click='remove(issue)')
