@@ -2,4 +2,6 @@ div
   h2 Issues
   div(ng-controller='Issues')
     ul
-      li.issue(ng-repeat='issue in issues') {{issue.title}}
+      li.issue(ng-repeat='issue in issues')
+        {{issue.title}}
+        button(ng-click='remove(issue)')
