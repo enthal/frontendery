@@ -13,6 +13,12 @@ angular.module('app.controllers', [])
 
   $scope.remove = (issue) ->
     $scope.issues.splice $scope.issues.indexOf(issue), 1   # assume indexOf found
+
+  $scope.getTotalSignatureCount = ->
+    $scope.issues?.reduce? ((sum, issue) ->
+      sum += issue.ips?.reduce?(((sum, ip) ->
+        sum += ip.sigs?.length or 0), 0) or 0
+    ), 0
 ])
 
 .controller('Issue', [

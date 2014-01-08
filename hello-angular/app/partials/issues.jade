@@ -1,6 +1,8 @@
 div(ng-controller='Issues')
   h2 Issues
   div
+    {{getTotalSignatureCount()}} signatures
+
     ul
       li.issue(ng-repeat='issue in issues')
         button(ng-click='remove(issue)')
