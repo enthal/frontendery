@@ -24,7 +24,19 @@ angular.module('app.controllers', [])
   console.log $routeParams
   withIssues($http, $q).then (issues) ->
     $scope.issue = (i for i in issues when i.id is +$routeParams.issueId)[0]
-    # TODO act sad on none such?  or allow undefined in template?
+
+  $scope.addIp = ->
+    $scope.ips ?= []
+    $scope.ips.push ip:'some ip'
+
+  count = 0
+  $scope.addSig = (ip) ->
+    ip.sigs ?= []
+    for [1..10]
+      ip.sigs.push
+        id:count++
+        first_name: 'joe'
+        last_name: 'blo'
 ])
 
 do ->

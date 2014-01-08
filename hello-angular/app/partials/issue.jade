@@ -1,3 +1,10 @@
 div(ng-controller='Issue')
   h2 Issue: {{issue.title}}
   div id: {{issue.id}}
+
+  button(ng-click='addIp()') add IP
+  ul
+    li(ng-repeat='ip in ips') {{ip.ip}}
+      button(ng-click='addSig(ip)') add sig
+      ul
+        li(ng-repeat='sig in ip.sigs') {{sig}}
