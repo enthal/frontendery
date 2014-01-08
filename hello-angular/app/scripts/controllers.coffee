@@ -15,10 +15,11 @@ angular.module('app.controllers', [])
     $scope.issues.splice $scope.issues.indexOf(issue), 1   # assume indexOf found
 
   $scope.getTotalSignatureCount = ->
-    $scope.issues?.reduce? ((sum, issue) ->
-      sum += issue.ips?.reduce?(((sum, ip) ->
-        sum += ip.sigs?.length or 0), 0) or 0
-    ), 0
+    sum = 0
+    for issue in $scope.issues||[]
+      for ip in issue.ips||[]
+        sum += ip.sigs?.length or 0
+    sum
 ])
 
 .controller('Issue', [
