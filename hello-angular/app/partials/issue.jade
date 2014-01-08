@@ -4,7 +4,10 @@ div(ng-controller='Issue')
 
   button(ng-click='addIp()') add IP
   ul
-    li(ng-repeat='ip in ips') {{ip.ip}}
-      button(ng-click='addSig(ip)') add sig
-      ul
+    li(ng-repeat='ip in ips')
+      input(type='checkbox', ng-model='ip.isCollapsed')
+      button(ng-click='addSig(ip)')        add sig
+      {{ip.ip}}
+
+      ul(ng-class='{noDisplay:ip.isCollapsed}')
         li(ng-repeat='sig in ip.sigs') {{sig}}

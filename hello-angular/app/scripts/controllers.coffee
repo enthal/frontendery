@@ -26,8 +26,7 @@ angular.module('app.controllers', [])
     $scope.issue = (i for i in issues when i.id is +$routeParams.issueId)[0]
 
   $scope.addIp = ->
-    $scope.ips ?= []
-    $scope.ips.push ip:'some ip'
+    ($scope.ips ?= []).push ip:'some ip'
 
   count = 0
   $scope.addSig = (ip) ->
